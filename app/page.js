@@ -33,7 +33,8 @@ const page = () => {
             onClick={() => {
               deleteHandler(i);
             }}
-            className="bg-red-400 text-white px-4 py-1 me-16 rounded fon-bold">
+            className="bg-green-400 text-white
+            border border-solid border-black px-4 py-1 me-8 rounded fon-bold">
             Delete
           </button>
         </li>
@@ -43,16 +44,16 @@ const page = () => {
 
   return (
     <>
-      <div className="w-2/3 border-4">
-        <h1 className=" p-5 text-5xl text-center font-bold bg-black text-white">
-          Sahil's Todo List
+      <div className=" w-2.5/5 border-4 border-solid border-black  mt-32">
+        <h1 className=" p-5 text-3xl text-center font-bold bg-slate-800 text-white">
+          My Todo List
         </h1>
 
-        <div className="flex justify-center">
+        <div className="flex justify-center bg-slate-400">
           <form onSubmit={submitHandler}>
             <input
               type="text"
-              className="border-gray-950 border-2 m-5 text-2xl p-2 rounded-3xl"
+              className="border-gray-950 border-2 m-5  p-2 rounded-3xl"
               placeholder="Enter title here"
               value={title}
               onChange={(e) => {
@@ -62,7 +63,7 @@ const page = () => {
 
             <input
               type="text"
-              className="border-gray-950 border-2 m-5 text-2xl p-2 rounded-3xl"
+              className="border-gray-950 border-2 m-5  p-2 rounded-3xl"
               placeholder="Enter description here"
               value={desc}
               onChange={(e) => {
@@ -70,19 +71,22 @@ const page = () => {
               }}
             />
 
-            <button className="bg-black text-white text-xl  rounded-3xl border-spacing-4 p-2">
+            <button className="bg-black text-white  rounded-3xl border-spacing-4 me-4 p-2">
               Add Task
             </button>
           </form>
           <hr />
         </div>
+
         <div className=" py-4 bg-slate-300">
-          <div className=" flex justify-between font-bold text-2xl mx-5 ms-10 my-2 w-2/4">
+          <div className=" flex justify-between font-semi-bold text-xl px-10  my-2 border-b-2 border-t-2">
           <ul>Task</ul>
           <ul>Description</ul>
+          <ul>Remove</ul>
           </div>
           <ul>{renderTask}</ul>
         </div>
+
       </div>
     </>
   );
